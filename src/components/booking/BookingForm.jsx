@@ -155,7 +155,7 @@ const currentUser = localStorage.getItem("userId")
 												name="checkInDate"
 												value={booking.checkInDate}
 												placeholder="check-in-date"
-												min={moment().format("YYYY-MM-DD")}
+												min={moment().format("MMM Do, YYYY")}
 												onChange={handleInputChange}
 											/>
 											<Form.Control.Feedback type="invalid">
@@ -174,7 +174,7 @@ const currentUser = localStorage.getItem("userId")
 												name="checkOutDate"
 												value={booking.checkOutDate}
 												placeholder="check-out-date"
-												min={moment().format("YYYY-MM-DD")}
+												min={moment().format("MMM Do, YYYY")}
 												onChange={handleInputChange}
 											/>
 											<Form.Control.Feedback type="invalid">
@@ -217,6 +217,7 @@ const currentUser = localStorage.getItem("userId")
 												name="numOfChildren"
 												value={booking.numOfChildren}
 												placeholder="0"
+												min={0}
 												onChange={handleInputChange}
 											/>
 											<Form.Control.Feedback type="invalid">

@@ -41,6 +41,7 @@ function App() {
 							}
 						/>
 						<Route path="/browse-all-rooms" element={<RoomListing />} />
+
 						<Route path="/admin" element={<Admin />} />
 						<Route path="/booking-success" element={<BookingSuccess />} />
 						<Route path="/existing-bookings" element={<Bookings />} />
