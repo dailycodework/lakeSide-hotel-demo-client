@@ -19,7 +19,9 @@ export async function addRoom(photo, roomType, roomPrice) {
 	formData.append("roomType", roomType)
 	formData.append("roomPrice", roomPrice)
 
-	const response = await api.post("/rooms/add/new-room", formData)
+	const response = await api.post("/rooms/add/new-room", formData,{
+		headers: getHeader()
+	})
 	if (response.status === 201) {
 		return true
 	} else {
@@ -63,7 +65,9 @@ export async function updateRoom(roomId, roomData) {
 	formData.append("roomType", roomData.roomType)
 	formData.append("roomPrice", roomData.roomPrice)
 	formData.append("photo", roomData.photo)
-	const response = await api.put(`/rooms/update/${roomId}`, formData)
+	const response = await api.put(`/rooms/update/${roomId}`, formData,{
+		headers: getHeader()
+	})
 	return response
 }
 
@@ -133,7 +137,7 @@ export async function getAvailableRooms(checkInDate, checkOutDate, roomType) {
 		`rooms/available-rooms?checkInDate=${checkInDate}
 		&checkOutDate=${checkOutDate}&roomType=${roomType}`
 	)
-	return result 	
+	return result
 }
 
 /* This function register a new user */
